@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Smart Bag Assistant</title><link rel="stylesheet" href="style.css"></head><body>
+<aside><div class="brand">🎒 <b>Smart Bag</b><small>Assistant</small></div>
+<button class="active" data-p="home">🏠 Dashboard</button><button data-p="pack">🎒 Smart Pack</button><button data-p="table">📅 Timetable</button><button data-p="books">📚 Books</button><button data-p="weight">⚖️ Weight</button><button data-p="rem">🔔 Reminders</button><button data-p="insight">💡 Insights</button>
+<div class="tip">✨ <b>Smart tip</b><br>Carry only what you need today.</div></aside>
+<main><header><div><small>SMART BAG ASSISTANT</small><h1 id="title">Dashboard</h1></div><button id="theme">🌙</button></header>
+<section id="home" class="page active"><div class="hero"><div><span>✨ STUDENT INNOVATION PROJECT</span><h2>Make your bag lighter.<br>Make your day smarter.</h2><p>Plan books, check weights, build your daily list and get friendly alerts.</p><button onclick="go('pack')">🎒 Start Packing →</button></div><div class="bag">🎒</div></div>
+<div class="picture"><div><b>🌈 Plan • Pack • Learn • Smile</b><p>A colourful way to organize your school day.</p></div><img src="images/app-preview.png" onerror="this.style.display='none'"></div>
+<div class="stats"><div>📚 <b id="bc">0</b><small>Books</small></div><div>⚖️ <b id="bd">0 kg</b><small>Bag weight</small></div><div>☑️ <b id="pd">0%</b><small>Packing</small></div><div>🔔 <b id="rd">0</b><small>Reminders</small></div></div>
+<div class="panel"><h3>📅 Today's Classes</h3><div id="classes"></div></div></section>
+
+<section id="pack" class="page"><div class="banner">🎒 <div><h2>Pack smarter, not heavier!</h2><p>Books matching today's subjects appear here.</p></div></div><div class="panel"><div class="row"><h3>Today's Pack List</h3><span id="prog" class="badge">0%</span></div><div class="bar"><i id="bar"></i></div><div id="packList"></div><div id="packSummary" class="summary"></div><p id="packTip"></p><button class="secondary" onclick="resetPack()">↻ Reset</button></div></section>
+
+<section id="table" class="page"><div class="panel"><h3>📅 Weekly Timetable</h3><div id="days" class="days"></div><div id="subjects" class="subjects"></div></div></section>
+
+<section id="books" class="page"><div class="banner">📚 <div><h2>Book Weight Checker</h2><p>Enter a weight and the app immediately tells you if the book is light, medium or heavy.</p></div></div><div class="panel"><form id="bookForm"><input id="bn" placeholder="Book name" required><input id="bs" placeholder="Subject" required><input id="bw" type="number" min="0" step=".01" placeholder="Weight kg" required><button>Add Book</button></form><div class="legend">🟢 Light &lt; 0.40 kg &nbsp; 🟡 Medium 0.40–0.70 kg &nbsp; 🔴 Heavy &gt; 0.70 kg</div><div id="bookList"></div></div></section>
+
+<section id="weight" class="page"><div class="two"><div class="panel"><h2>⚖️ Bag Weight Tracker</h2><p>For this project, a simple 10% body-weight target is used as an example. Follow teacher/parent guidance for real use.</p><form id="weightForm" class="stack"><label>Body weight (kg)<input id="body" type="number" min="1" step=".1" required></label><label>Bag weight (kg)<input id="bagw" type="number" min="0" step=".1" required></label><button>🔎 Check My Bag</button></form></div><div class="panel center"><div class="scale">⚖️</div><h2 id="result">Enter your weight</h2><span id="wb" class="badge">Waiting</span><p id="advice">Your result will appear here.</p></div></div></section>
+
+<section id="rem" class="page"><div class="panel"><h2>🔔 Reminders</h2><form id="remForm"><input id="rt" placeholder="e.g. Bring water bottle" required><input id="tm" type="time"><button>Add Reminder</button></form><div id="remList"></div></div></section>
+
+<section id="insight" class="page"><div class="insights"><article>💡<h3>Smart Packing</h3><p id="ip"></p></article><article>📚<h3>Book Check</h3><p id="ib"></p></article><article>⚖️<h3>Weight Check</h3><p id="iw"></p></article><article>🌟<h3>Project Impact</h3><p>Helps students organize books, save time and avoid unnecessary weight.</p></article></div><div class="panel"><h3>📊 Summary</h3><div id="sum"></div></div></section>
+</main>
+<script src="script.js"></script></body></html>
